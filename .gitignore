@@ -1,0 +1,13 @@
+.directory 
+.DS_store
+
+*.aux
+*.bbl
+*.blg
+*.brf 
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+
+main.pdf
