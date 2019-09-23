@@ -7,3 +7,5 @@ This is the source code for generating my curriculum vitae. Build everything by 
     $ ./latexCV.sh 
 
 You'll need ``pdflatex`` installed. Appropriately formatting my name in various places relies upon hacking the `.bbl` outputs with `sed`, so unfortunately you can't (yet) use more modern tex implementations like [`tectonic`](https://tectonic-typesetting.github.io/).
+
+`Sed` edits credited to Vanessa Bailey.
