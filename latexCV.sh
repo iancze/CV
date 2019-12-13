@@ -1,6 +1,9 @@
 #!/bin/sh
-# var=mypubs # The procesgsed library
-# var2=mylibrary # The raw library downloaded from ADS
+
+# produces three files 
+# full : the complete CV + publications in one file 
+# cv-only : only the CV 
+# pub-only : only the publications
 
 # clear old intermediate files
 rm *.aux
@@ -12,6 +15,9 @@ rm *.fls
 rm *.log
 rm *.out
 
+# make the cv-only document first, since it doesn't require bibtex 
+pdflatex cv-only.tex 
+
 # fix Latex errors
 gsed -i -re 's/(\{\\prime\})/\$\^\\prime\$/g' first_papers.bib
 gsed -i -re 's/(\{\\prime\})/\$\^\\prime\$/g' all_papers.bib
@@ -20,7 +26,7 @@ gsed -i -re 's/(\{\\ap\})/\$\\approx\$/g' first_papers.bib
 gsed -i -re 's/(\{\\ap\})/\$\\approx\$/g' all_papers.bib
 gsed -i -re 's/(\{\\ap\})/\$\\approx\$/g' preprint_papers.bib
 
-pdflatex main.tex
+pdflatex full.tex
 bibtex first
 bibtex all
 bibtex preprint
@@ -48,9 +54,11 @@ gsed -i -re 's/(\{Czekala\},[ ]{1,}I.;)/\{Czekala\}, Ian;/g' preprint.bbl
 gsed -i -re 's/(\{Czekala\},[ ]{1,}Ian)/\\textbf\{\1\}/g' preprint.bbl
 gsed -i -re 's/(\{Czekala\},[ ]{1,}Ian;)/\\textbf\{\1\}/g' preprint.bbl
 
-pdflatex main.tex
-pdflatex main.tex
+pdflatex full.tex
+pdflatex full.tex
 
+pdflatex pub-only.tex 
+pdflatex pub-only.tex
 
 # update version on website
-cp main.pdf ~/Documents/Professional/iancze.github.io/assets/Ian_CzekalaCV.pdf
+cp full.pdf ~/Documents/Professional/iancze.github.io/assets/Ian_CzekalaCV.pdf

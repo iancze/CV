@@ -1,0 +1,134 @@
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+
+\usepackage{lmodern}
+
+%\usepackage[hidelinks]{hyperref}
+
+\usepackage[dvipsnames]{xcolor}
+\definecolor{myblue1}{RGB}{22, 63, 130}
+\definecolor{mygrey1}{RGB}{145, 145, 145}
+
+% \usepackage[backref,breaklinks,colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\usepackage[backref,breaklinks,colorlinks,urlcolor=myblue1,citecolor=myblue1,linkcolor=myblue1]{hyperref}
+\usepackage{etaremune}
+
+\usepackage[thinlines]{easytable}
+
+\usepackage{aas_macros}
+
+\usepackage{multibbl}
+
+\newbibliography{all}
+\newbibliography{first}
+\newbibliography{preprint}
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=0.7in,bmargin=0.7in,lmargin=0.7in,rmargin=0.7in,headheight=0in,headsep=0in,footskip=.3in}
+
+
+% Change spacing of the itemize and etaremune environments
+\setlength{\parindent}{0in}
+\setlength{\parskip}{1em}
+\setlength{\itemsep}{1em}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+% Increase the spacing between rows in the tabular environment
+\renewcommand{\arraystretch}{1.05}
+
+\newcommand{\hr}{\rule{\textwidth}{0.2pt}}
+\newcommand{\rowskip}{1.2mm}
+
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{-\baselineskip}{0.5\baselineskip}{\scshape\color{myblue1}}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{-\baselineskip}{0.5\baselineskip}{\hspace{12pt}\itshape}}
+
+\makeatother
+
+\begin{document}
+
+\fontfamily{ppl} \selectfont
+
+{\huge \textcolor{myblue1}{Dr. Ian Czekala} } {\small \hfill Updated \today}
+
+\rule{\textwidth}{1pt}
+
+\parbox[t]{3in}{
+\begin{flushleft}
+Campbell Hall Rm. 605B\\
+University of California at Berkeley\\
+Berkeley, CA 94720-3411\\
+ORCID ID: \href{http://orcid.org/0000-0002-1483-8811}{0000-0002-1483-8811} \\
+\end{flushleft}} \ \hfill  \
+\parbox[t]{3in}{
+\begin{flushright}
+%Office: Rm 216 Physics and Astronomy Building\\
+Phone: (631)-793-9292\\
+Email: iczekala@berkeley.edu\\
+\url{http://iancze.github.io}\\
+U.S. Citizen
+\end{flushright}}
+
+\vspace{12pt}
+
+
+\section*{Refereed Publications}
+
+First author: 7 / total: 32 / citations (all): 1694 / h-index (all): 22 / (2019-10-28) [\href{https://ui.adsabs.harvard.edu/#/public-libraries/G0Ow9TGTRyuVT7hbhzailA}{link}]
+
+
+% cite everything in library silently, creating only refs section
+\nocite{first}{*}
+
+\nocite{all}{*}
+
+\nocite{preprint}{*}
+
+\bibliographystyle{first}{cv}
+\bibliography{first}{first_papers}{First and Second Author Publications}
+
+\bibliographystyle{all}{cv}
+\bibliography{all}{all_papers}{Many-Author Publications}
+
+\bibliographystyle{preprint}{cv}
+\bibliography{preprint}{preprint_papers}{Preprints and Non-Refereed Papers}
+
+\section*{Selected Posters}
+\begin{etaremune}
+\item \href{https://figshare.com/articles/The_Degree_of_Alignment_Between_Circumbinary_Disks_and_Their_Host_Binaries/9209357}{\emph{The Degree of Alignment Between Circumbinary Disks and their Host Binaries}}\\
+\textbf{Ian Czekala}, E.~Chiang, S.~M.~Andrews, E.~L.~N.~Jensen, G.~Torres, D.~J.~Wilner, K.~G.~Stassun, \& B. Macintosh \\
+New Horizons in Planetary Systems, Victoria, BC, Canada. May 13-17, 2019
+\item \href{https://figshare.com/articles/Using_Protoplanetary_Disks_to_Weigh_the_Youngest_Stars_and_Constrain_The_Earliest_Stages_of_Stellar_Evolution/1613531}{\emph{Using Protoplanetary Disks to Weigh the Youngest Stars and Constrain}}\\
+\href{https://figshare.com/articles/Using_Protoplanetary_Disks_to_Weigh_the_Youngest_Stars_and_Constrain_The_Earliest_Stages_of_Stellar_Evolution/1613531}{\emph{The Earliest Stages of Stellar Evolution}} \\
+\textbf{Ian Czekala}, S.~M.~Andrews, E.~L.~N.~Jensen, K.~G.~Stassun, D.~Latham, D.~J.~Wilner, \& G.~Torres\\
+Extreme Solar Systems III Conference, Waikoloa Village, HI, Nov 29 - 4, 2015
+\item \emph{A Disk-based Dynamical Mass Estimate for the Young Binary AK Sco}\\
+\textbf{Ian Czekala}, S.~M.~Andrews, E.~L.~N.~Jensen, K.~G.~Stassun, G.~Torres, \& D.~J.~Wilner\\
+2015 Gordon Research Conference on Origins of Solar Systems, Mount Holyoke, MA
+\item \emph{A Novel Tool for the Spectroscopic Inference of Fundamental Stellar Parameters}\\
+\textbf{Czekala, Ian};  Andrews, Sean M.; Latham, David W.; Torres, Guillermo\\
+Summer AAS Meeting \#224 \#322.01, Boston, MA
+\item \emph{The Unusually Luminous Extragalactic Nova SN 2010U}\\
+\textbf{Czekala, Ian}; Chornock, R.; Berger, E.; Pastorello, A.; Marion, G. H.; Challis, P.; Wheeler, J. C.; Botticella, M. T.; Smartt, S.; Ergon, M.; Sollerman, J.\\
+American Astronomical Society, AAS Meeting \#218, \#127.11; Vol. 43, 2011
+\item \emph{Truncated Disks in TW Hya Association Multiple Star Systems}\\
+\textbf{Czekala, Ian}; Andrews, Sean\\
+American Astronomical Society, AAS Meeting \#215, \#428.05; Vol. 42, p.345 awarded \textbf{Chambliss Student Achievement Award}
+\end{etaremune}
+
+
+\section*{Collaborative Posters}
+\begin{etaremune}
+\item \emph{Snapshots of the Universe: A Multi-Lingual Astronomy Art Book}\\
+Beaton, Rachael; Jackson, L.; Carlberg, J.; Johnson, K.; Marchand, R.; Sivakoff, G.; \textbf{Czekala, I.}; Damke, G.; Dean, J.; Drosback, M.; Gugliucci, N.; Martinez, O.; Wong, A.; Zasowski, G.; Skies, Dark; Kids, Bright\\
+American Astronomical Society, AAS Meeting \#220, \#437.13
+\item \emph{Astrobites: The Astro-ph Reader's Digest For Undergraduates}\\
+Sanders, Nathan; Newton, E. R.; \textbf{Czekala, I.}; Rosenfeld, K.; Dressing, C. D.; Gifford, D.; Suresh, J.; Schneider, E.; Morley, C.; Kohler, S.\\
+American Astronomical Society, AAS Meeting \#218, \#333.11; Bulletin of the American Astronomical Society, Vol. 43, 2011
+\end{etaremune}
+
+
+\end{document}
