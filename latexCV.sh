@@ -60,5 +60,5 @@ pdflatex full.tex
 pdflatex pub-only.tex 
 pdflatex pub-only.tex
 
-# update version on website
-cp full.pdf ~/Documents/Professional/iancze.github.io/assets/Ian_CzekalaCV.pdf
+# version for website
+cp full.pdf Czekala_Ian_CV.pdf
