@@ -18,6 +18,11 @@ rm *.out
 # make the cv-only document first, since it doesn't require bibtex 
 pdflatex cv-only.tex 
 
+# download the following ADS libraries
+# CV: IPC First/Selected -> first.bib
+# CV: IPC refereed non-first -> all.bib
+# CV: Preprints -> preprint.bib
+
 # fix Latex errors
 gsed -i -re 's/(\{\\prime\})/\$\^\\prime\$/g' first_papers.bib
 gsed -i -re 's/(\{\\prime\})/\$\^\\prime\$/g' all_papers.bib

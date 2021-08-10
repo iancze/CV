@@ -1,6 +1,6 @@
 # Curriculum Vitae
 
-You can find the latest PDF version of my CV available on my [website](https://sites.psu.edu/iczekala/), [here](https://sites.psu.edu/iczekala/files/2020/08/Czekala_Ian_CV.pdf).
+You can find the latest PDF version of my CV available on my [website](http://www.personal.psu.edu/ipc5094/Czekala_Ian_CV.pdf).
 
 This is the source code for generating my curriculum vitae. Build everything by running 
 
@@ -17,3 +17,11 @@ The scripts compile three versions of the CV, for various forms of consumption.
 * `pub-only.pdf` a publications list
 
 These are separated out into a header class defining the page layout and separate `full.tex`, `cv-only.tex`, and `pub-only.tex` files which include the appropriate source lists. To update the CV, you should update the source lists contained in `src/`.
+
+## Updating bibliographies
+
+All bibtex files are created using ADS. To update the local copies, download the following ADS libraries
+
+* `CV: IPC First/Selected` -> `first.bib`
+* `CV: IPC refereed non-first` -> `all.bib`
+* `CV: Preprints` -> `preprint.bib`
