@@ -22,6 +22,6 @@ These are separated out into a header class defining the page layout and separat
 
 All bibtex files are created using ADS. To update the local copies, download the following ADS libraries
 
-* `CV: IPC First/Selected` -> `first.bib`
-* `CV: IPC refereed non-first` -> `all.bib`
-* `CV: Preprints` -> `preprint.bib`
+* `CV: IPC First/Selected` -> `first_papers.bib`
+* `CV: IPC refereed non-first` -> `all_papers.bib`
+* `CV: Preprints` -> `preprint_papers.bib`

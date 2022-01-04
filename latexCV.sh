@@ -19,9 +19,9 @@ rm *.out
 pdflatex cv-only.tex 
 
 # download the following ADS libraries
-# CV: IPC First/Selected -> first.bib
-# CV: IPC refereed non-first -> all.bib
-# CV: Preprints -> preprint.bib
+# CV: IPC First/Selected -> first_papers.bib
+# CV: IPC refereed non-first -> all_papers.bib
+# CV: Preprints -> preprint_papers.bib
 
 # fix Latex errors
 gsed -i -re 's/(\{\\prime\})/\$\^\\prime\$/g' first_papers.bib
@@ -62,8 +62,9 @@ gsed -i -re 's/(\{Czekala\},[ ]{1,}Ian;)/\\textbf\{\1\}/g' preprint.bbl
 pdflatex full.tex
 pdflatex full.tex
 
-pdflatex pub-only.tex 
-pdflatex pub-only.tex
-
 # version for website
 cp full.pdf Czekala_Ian_CV.pdf
+
+
+pdflatex pub-only.tex 
+pdflatex pub-only.tex
