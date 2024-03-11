@@ -4,10 +4,7 @@
 \usepackage{url}
 
 \usepackage{longtable}
-
 \usepackage{lmodern}
-
-%\usepackage[hidelinks]{hyperref}
 
 \usepackage[dvipsnames]{xcolor}
 \definecolor{myblue1}{RGB}{22, 63, 130}
@@ -21,15 +18,8 @@
 
 \usepackage{aas_macros}
 
-\usepackage{multibbl}
-
-\newbibliography{all}
-\newbibliography{first}
-\newbibliography{preprint}
-
 \pagestyle{empty}
 \geometry{letterpaper,tmargin=0.7in,bmargin=0.7in,lmargin=0.7in,rmargin=0.7in,headheight=0in,headsep=0in,footskip=.3in}
-
 
 % Change spacing of the itemize and etaremune environments
 \setlength{\parindent}{0in}
@@ -58,44 +48,34 @@
 
 \rule{\textwidth}{1pt}
 
-\input{src/contact.tex}
+\input{static/contact.tex}
 
 \vspace{12pt}
 
-\section*{Scientific Interests}
-Protoplanetary disks, exoplanets, star and planet formation, astrostatistics, radio interferometry, spectroscopy
+I am a lecturer in the \href{https://www.st-andrews.ac.uk/physics-astronomy/}{School of Physics and Astronomy} at the \href{https://www.st-andrews.ac.uk/}{University of St. Andrews} in the UK. I lead a \href{https://iancze.github.io/}{research group} that develops and employs a variety of statistical techniques to advance our understanding of the astrophysics of star and planet formation.
 
-% Try either https://www.sharelatex.com/learn/Tables#Changing_the_appearance_of_a_table
-% or easytable:
+\textbf{keywords}: planet formation, astrostatistics, radio interferometry, high performance computation, spectroscopy, protoplanetary disks, exoplanets, Bayesian inference, stochastic methods, machine learning
 
-\input{src/education}
+\input{static/professional-appointments}
+\input{static/education}
+\input{static/scientific-research}
+\input{static/honors-and-awards}
+\input{static/pub-summary}
 
-\input{src/professional-appointments}
+\input{filled/first}
+\input{filled/everything}
+\input{filled/preprints}
 
-\input{src/scientific-research}
-
-\input{src/honors-and-awards}
-
-\input{src/pub-summary}
-
-\input{src/students}
-
-\input{src/invited-talks}
-
-\input{src/contributed-talks}
-
-\input{src/proposals}
-
-\input{src/workshops-and-conferences}
-
-\input{src/codes}
-
-\input{src/observing}
-
-\input{src/teaching}
-
-\input{src/service}
-
-\input{src/references.tex}
+\input{static/students}
+\input{static/invited-talks}
+\input{static/contributed-talks}
+\input{static/proposals}
+\input{static/workshops-and-conferences}
+\input{static/codes}
+\input{static/observing}
+\input{static/teaching}
+\input{static/service}
+\input{static/posters.tex}
+\input{static/references.tex}
 
 \end{document}

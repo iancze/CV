@@ -1,5 +1,11 @@
 .directory 
-.DS_store
+.DS_Store
+.snakemake
+examples
+venv
+
+__pycache__
+
 
 *.aux
 *.bbl
@@ -9,5 +15,11 @@
 *.fls
 *.log
 *.out
+*.pdf
+*.synctex.gz
 
-main.pdf
+# do not track key
+credentials.toml
+tmp
+tex/filled
+build
