@@ -13,6 +13,3 @@ To update CV:
 * output will be in `build/`
 
 Credit to https://github.com/dfm/cv for some aspects of the build process.
-
-## Future development
-* automatically update publication summary from ADS stats
