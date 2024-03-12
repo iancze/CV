@@ -4,13 +4,12 @@
 \usepackage{url}
 
 \usepackage{longtable}
-\usepackage{lmodern}
+% \usepackage{helvet} % set font
 
 \usepackage[dvipsnames]{xcolor}
 \definecolor{myblue1}{RGB}{22, 63, 130}
 \definecolor{mygrey1}{RGB}{145, 145, 145}
 
-% \usepackage[backref,breaklinks,colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
 \usepackage[backref,breaklinks,colorlinks,urlcolor=myblue1,citecolor=myblue1,linkcolor=myblue1]{hyperref}
 \usepackage{etaremune}
 
@@ -19,7 +18,7 @@
 \usepackage{aas_macros}
 
 \pagestyle{empty}
-\geometry{letterpaper,tmargin=0.7in,bmargin=0.7in,lmargin=0.7in,rmargin=0.7in,headheight=0in,headsep=0in,footskip=.3in}
+\geometry{a4paper,margin=2cm,headheight=0in,headsep=0in,footskip=.3in}
 
 % Change spacing of the itemize and etaremune environments
 \setlength{\parindent}{0in}
@@ -42,7 +41,9 @@
 
 \begin{document}
 
-\fontfamily{ppl} \selectfont
+% \fontfamily{phv} \selectfont % helvetica
+% \fontfamily{qag} \selectfont % TeX Gyre Adventor
+\fontfamily{lmss} \selectfont % Latin Modern Sans Serif
 
 {\huge \textcolor{myblue1}{Dr. Ian Czekala} } {\small \hfill Updated \today}
 
@@ -50,11 +51,12 @@
 
 \input{static/contact.tex}
 
+
 \vspace{12pt}
 
 I am a lecturer in the \href{https://www.st-andrews.ac.uk/physics-astronomy/}{School of Physics and Astronomy} at the \href{https://www.st-andrews.ac.uk/}{University of St. Andrews} in the UK. I lead a \href{https://iancze.github.io/}{research group} that develops and employs a variety of statistical techniques to advance our understanding of the astrophysics of star and planet formation.
 
-\textbf{keywords}: planet formation, astrostatistics, radio interferometry, high performance computation, spectroscopy, protoplanetary disks, exoplanets, Bayesian inference, stochastic methods, machine learning
+\textbf{keywords}: planet formation, astrostatistics, radio interferometry, high performance computation, spectroscopy, protoplanetary disks, exoplanets, Bayesian inference, stochastic methods, machine learning, neural networks
 
 \input{static/professional-appointments}
 \input{static/education}
