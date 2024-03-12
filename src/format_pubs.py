@@ -3,6 +3,14 @@ from pathlib import Path
 import json 
 import utf8totex
 
+# correct mapping of bibcode to tex-friendly title
+title_map = {
+    "2021ApJS..257....6G": "Molecules with ALMA at Planet-forming Scales (MAPS). VI. Distribution of the Small Organics HCN, $\mathrm{C}_2\mathrm{H}$, and $\mathrm{H}_2\mathrm{CO}$",
+    "2021ApJS..257...13A": "Molecules with ALMA at Planet-forming Scales (MAPS). XIII. $\mathrm{HCO}^+$ and Disk Ionization Structure",
+    "2021ApJS..257....9I": "Molecules with ALMA at Planet-forming Scales (MAPS). IX. Distribution and Properties of the Large Organic Molecules $\mathrm{HC}_3\mathrm{N}$, $\mathrm{CH}_3\mathrm{CN}$, and c-$\mathrm{C}_3\mathrm{H}_2$"
+}
+
+
 def format_authors(author_list:list, num:int=4) -> str:
     """
     Parameters
@@ -94,6 +102,12 @@ def format_publication(record:dict)->str:
     # format article title in steps 
     # convert utf8 to appropriate tex characters
     title_0 = utf8totex.utf8totex(title)
+
+    # replace title if known trouble 
+    bibcode = record["bibcode"]
+    if bibcode in title_map.keys():
+        title_0 = title_map[bibcode]
+
     title_1 = "\\emph{{{:}}}".format(title_0) # italicize
     title_2 = "\\href{{{:}}}{{{:}}}".format(url, title_1) # link url
 

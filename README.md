@@ -15,6 +15,4 @@ To update CV:
 Credit to https://github.com/dfm/cv for some aspects of the build process.
 
 ## Future development
-* change font to something like Helvetica
 * automatically update publication summary from ADS stats
-* update color scheme
