@@ -4,33 +4,50 @@ with open("credentials.toml", "rb") as f:
     c = tomllib.load(f)
 
 ads_token = c["ads_token"]
-library_order = ["first", "everything", "preprints"]
+libraries = ["all", "preprints"]
+
+all_id = c["libraries"]["all"]["id"]
+preprints_id = c["libraries"]["preprints"]["id"]
 
 rule all:
     input:
         "build/Czekala_CV.pdf"
 
-def get_library_id(wildcards):
-    return c["libraries"][wildcards.name]["id"]
-
-rule dl_json_library:
+# all needs to be split, so it goes to a separate directory first
+rule dl_json_all:
     input:
-        src="src/get_library.py",
-    params:
-        id=get_library_id
+        "src/get_library.py",
+    output:
+        "dl/all.json"
+    shell:
+        "python {input} {all_id} {ads_token} {output}"
+
+# split `all` refereed files into `first` and `remaining`
+rule split_json:
+    input:
+        "dl/all.json"
     output:
         "tmp/{name}.json"
     shell:
-        "python {input.src} {params.id} {ads_token} {output}"
+        "python src/split_json.py {input} {output}"
 
-libraries = expand("tmp/{name}.json", name=library_order)
+# preprints doesn't need to be split, it goes straight to tmp
+rule dl_json_preprints:
+    input:
+        "src/get_library.py",
+    output:
+        "tmp/preprints.json"
+    shell:
+        "python {input} {preprints_id} {ads_token} {output}"
 
 # get list of static tex files
 import glob 
 statics = glob.glob("tex/static/*.tex")
 
-templates = expand("tex/templates/{name}.tex", name=library_order)
-filled = expand("tex/filled/{name}.tex", name=library_order)
+# the bibliographies that will be in the latex document
+bib_lists = ["first", "remaining", "preprints"]
+templates = expand("tex/templates/{name}.tex", name=bib_lists)
+filled = expand("tex/filled/{name}.tex", name=bib_lists)
 
 rule fill_template:
     input: "src/format_pubs.py", tex="tex/templates/{name}.tex", json="tmp/{name}.json"

@@ -101,13 +101,12 @@ def format_publication(record:dict)->str:
     # {{}} to escape {}
     return "{:}, {:}, {:}, {:}".format(authors, title_2, journal, citation_str)
 
-def get_publications_list(json_file):
+def get_publications_list(json_file, name):
     with open(json_file, "r") as f:
         records = json.load(f)
 
     return [format_publication(record) for record in records]
 
-    
 def main():
     import argparse
 
@@ -127,7 +126,7 @@ def main():
     template = env.get_template(p.name)
 
     # format publications as list items from json
-    publications = get_publications_list(args.pub_json)
+    publications = get_publications_list(args.pub_json, p.name)
 
     # pass a list of formatted publications
     output = template.render(publications=publications)
