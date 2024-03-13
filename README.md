@@ -1,4 +1,8 @@
-# Curriculum Vitae
+# Dr. Ian Czekala Curriculum Vitae 
+
+**You can find a [PDF of my CV](https://iancze.github.io/Czekala_CV.pdf) on my [research website](https://iancze.github.io/)**
+
+This repository contains the source code for building the CV.
 
 Publication lists are directly sourced from two ADS libraries:
 * [All refereed papers](https://ui.adsabs.harvard.edu/user/libraries/G0Ow9TGTRyuVT7hbhzailA) 
