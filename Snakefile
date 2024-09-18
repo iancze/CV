@@ -16,11 +16,11 @@ rule all:
 # all needs to be split, so it goes to a separate directory first
 rule dl_json_all:
     input:
-        "src/get_library.py",
+        "credentials.toml", src="src/get_library.py"
     output:
         "dl/all.json"
     shell:
-        "python {input} {all_id} {ads_token} {output}"
+        "python {input.src} {all_id} {ads_token} {output}"
 
 # split `all` refereed files into `first` and `remaining`
 rule split_json:
@@ -34,11 +34,11 @@ rule split_json:
 # preprints doesn't need to be split, it goes straight to tmp
 rule dl_json_preprints:
     input:
-        "src/get_library.py",
+        "credentials.toml", src="src/get_library.py"
     output:
         "tmp/preprints.json"
     shell:
-        "python {input} {preprints_id} {ads_token} {output}"
+        "python {input.src} {preprints_id} {ads_token} {output}"
 
 # get list of static tex files
 import glob 
@@ -54,6 +54,9 @@ rule fill_template:
     output: "tex/filled/{name}.tex"
     shell:
         "python src/format_pubs.py {input.tex} {input.json} {output}"
+
+# for debug,
+# python src/format_pubs.py tex/templates/first.tex tmp/first.json tex/filled/first.tex
 
 rule full_cv_tectonic:
     input: statics, templates, filled, tex="tex/full.tex"

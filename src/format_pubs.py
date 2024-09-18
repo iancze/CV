@@ -2,6 +2,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from pathlib import Path
 import json 
 import utf8totex
+import re
 
 # correct mapping of bibcode to tex-friendly title
 title_map = {
@@ -78,6 +79,34 @@ def get_citation_str(record:dict) -> str:
     
     return ""
 
+def trim_journal_entry(s:str)->str:
+    """
+    Parameters
+    ----------
+    s: str
+        the journal entry string
+
+    Returns
+    -------
+    str
+        The journal entry string stripped of a year, if it was present.
+    
+    """
+    # as far as we can tell, the year is always in parentheses and at the end of the string.
+    # annoyingly, sometimes the journal key contains the year, other times it doesn't. So, compare
+    # "The Astrophysical Journal, Volume 883, Issue 1, article id. 22, 24 pp. (2019).",
+    # to
+    # "Publications of the Astronomical Society of the Pacific, Volume 135, Issue 1048, id.064503, 24 pp.",
+
+    p = re.compile(r'\([12]\d\d\d\)') # match (1999) or (2010), etc.
+
+    # see if this occurs in our string
+    m = p.search(s)
+    if m:
+        s = s[:m.start()-1]
+    
+    return s
+
 def format_publication(record:dict)->str:
     """
     Parameters
@@ -91,8 +120,9 @@ def format_publication(record:dict)->str:
         The publication rendered as formatted string ready for LaTeX consumption.
     """
     title = record["title"]
-    journal = record["journal"]
     url = record["url"]
+    pubdate = record["pubdate"]
+    journal = trim_journal_entry(record["journal"])
 
     authors = format_authors(record["author"])
 
@@ -108,13 +138,13 @@ def format_publication(record:dict)->str:
     if bibcode in title_map.keys():
         title_0 = title_map[bibcode]
 
+    # \\ to escape \
+    # {{}} to escape {}
     title_1 = "\\emph{{{:}}}".format(title_0) # italicize
     title_2 = "\\href{{{:}}}{{{:}}}".format(url, title_1) # link url
 
-    # \\ to escape \
-    # {{}} to escape {}
-    return "{:}, {:}, {:}, {:}".format(authors, title_2, journal, citation_str)
-
+    return f"{authors} {pubdate}, {title_2}, {journal}, {citation_str}"
+    
 def get_publications_list(json_file, name):
     with open(json_file, "r") as f:
         records = json.load(f)
