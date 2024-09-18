@@ -103,8 +103,14 @@ def trim_journal_entry(s:str)->str:
     # see if this occurs in our string
     m = p.search(s)
     if m:
-        s = s[:m.start()-1]
-    
+        # trim from the position of the find
+        s = s[:m.start()]
+        # then trim any whitespace
+        s = s.rstrip()
+
+        # do it this way in case we had something like '.(2020)'
+        # as opposed to s = s[:m.start() - 1]
+
     return s
 
 def format_publication(record:dict)->str:
