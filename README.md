@@ -15,5 +15,6 @@ To update CV:
 * make sure ADS token and library ids are available in `credentials.toml` 
 * run `snakemake -c 1 all`
 * output will be in `build/`
+* if you need to update the local copy of the library, run `snakemake -c 1 -R dl_json_all`
 
 Credit to https://github.com/dfm/cv for some aspects of the build process.
