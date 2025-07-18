@@ -8,7 +8,9 @@ import re
 title_map = {
     "2021ApJS..257....6G": "Molecules with ALMA at Planet-forming Scales (MAPS). VI. Distribution of the Small Organics HCN, $\mathrm{C}_2\mathrm{H}$, and $\mathrm{H}_2\mathrm{CO}$",
     "2021ApJS..257...13A": "Molecules with ALMA at Planet-forming Scales (MAPS). XIII. $\mathrm{HCO}^+$ and Disk Ionization Structure",
-    "2021ApJS..257....9I": "Molecules with ALMA at Planet-forming Scales (MAPS). IX. Distribution and Properties of the Large Organic Molecules $\mathrm{HC}_3\mathrm{N}$, $\mathrm{CH}_3\mathrm{CN}$, and c-$\mathrm{C}_3\mathrm{H}_2$"
+    "2021ApJS..257....9I": "Molecules with ALMA at Planet-forming Scales (MAPS). IX. Distribution and Properties of the Large Organic Molecules $\mathrm{HC}_3\mathrm{N}$, $\mathrm{CH}_3\mathrm{CN}$, and c-$\mathrm{C}_3\mathrm{H}_2$",
+    "2025ApJ...984L..18T": "exoALMA. XIII. Gas Masses from $\mathrm{N}_2\mathrm{H}^+$ and $\mathrm{C}^{18}\mathrm{O}$: A Comparison of Measurement Techniques for Protoplanetary Gas Disk Masses",
+    "2025ApJ...984L..15P": "exoALMA. X. Channel Maps Reveal Complex ${}^{12}\mathrm{CO}$ Abundance Distributions and a Variety of Kinematic Structures with Evidence for Embedded Planets"
 }
 
 
